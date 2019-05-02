@@ -15,7 +15,15 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/a_propos', 'AboutController@read');
 
-Route::get('/contact', 'ContactController@create');
+Route::get('/contact', [
+    'as' => 'contact_path', 
+    'uses' => 'ContactController@create' 
+]);
+
+Route::post('/contact', [
+    'as' => 'contact_path', 
+    'uses' => 'ContactController@store' 
+]);
 
 Route::get('/se_connecter', 'SeConnecterController@connect');
 

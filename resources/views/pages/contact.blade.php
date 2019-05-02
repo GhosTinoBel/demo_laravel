@@ -1,31 +1,36 @@
-@extends('layouts/template', ['title' => 'Me contacter']) 
+@extends('layouts/template', ['title' => 'Me contacter'])
 @section('mot_page')
      <h1>Formulaire de contact</h1>
 @endsection
 
 
 @section('content')
-<div class="col-md-6 col-md-offset-3">
-     <form>
-               <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nom">
+<div class="col-md-6 col-md-offset-1">
+     <form action="{{ route('contact_path') }}" method="POST" novalidate>
+               {{ csrf_field() }}
+                <div class="form-group {{ $errors -> has('nom') ? 'has-error' : ''}}">
+                    <label for="nom" class="control-label">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom" required="required">
+                    {!! $errors -> first('nom', '<span class="help-block">:message</span>') !!}
+               </div>
+               <div class="form-group {{ $errors -> has('prenom') ? 'has-error' : ''}}">
+                    <label for="prenom" class="control-label">Prénom(s)</label>
+                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prénom(s)" required="required">
+                    {!! $errors -> first('prenom', '<span class="help-block">:message</span>') !!}
+               </div>
+               <div class="form-group {{ $errors -> has('email') ? 'has-error' : ''}}">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required="required">
+                    {!! $errors -> first('email', '<span class="help-block">:message</span>') !!}
+               </div>
+               <div class="form-group {{ $errors -> has('message') ? 'has-error' : ''}}">
+                    <label for="message" class="control-label">Votre message</label>
+                    <textarea class="form-control" rows="3" name="message" id="message"  placeholder="Que voudriez-vous me dire ?" required="required"></textarea>
+                    {!! $errors -> first('message', '<span class="help-block">:message</span>') !!}
                </div>
                <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom(s)</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Prénom(s)">
-               </div>
-               <div class="form-group">
-                    <label for="exampleInputPassword1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
-               </div>
-               <div class="form-group">
-                    <label for="exampleInputPassword1">Votre message</label>
-                    <textarea class="form-control" rows="3"  placeholder="Que voudriez-vous me dire ?"></textarea>     
-               </div>
-               <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Envoyer</button>  
+                    <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
                </div>
      </form>
 </div>
-@endsection  
+@endsection
