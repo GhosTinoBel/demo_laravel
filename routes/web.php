@@ -13,12 +13,12 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/a_propos', 'AboutController@index');
+Route::get('/a_propos', 'AboutController@read');
 
-Route::get('/inscrire', 'InscrireController@index');
+Route::get('/contact', 'ContactController@create');
 
-Route::get('/contact', 'ContactController@index');
+Route::get('/se_connecter', 'SeConnecterController@connect');
 
 Route::get('/redirection', function () {
-    return redirect('/a_propos');
+    return redirect('/read');
 });

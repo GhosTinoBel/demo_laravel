@@ -33,7 +33,9 @@
         @yield('content')
 
         <footer class="footer">
+       <div class="col-md-6 col-md-offset-5">
           <p>&copy; 2016 Company, Inc.</p>
+       </div>
         </footer>
 
       </div> <!-- /container -->
