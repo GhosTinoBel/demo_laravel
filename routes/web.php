@@ -1,4 +1,5 @@
 <?php
+use App\Mail\ContactMessageCreated;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +16,22 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/a_propos', 'AboutController@read');
 
+Route::get('/redirection', function () {
+    return redirect('/read');
+});
+
 Route::get('/contact', [
-    'as' => 'contact_path', 
-    'uses' => 'ContactController@create' 
+    'as' => 'contact_path',
+    'uses' => 'ContactController@create'
 ]);
 
 Route::post('/contact', [
-    'as' => 'contact_path', 
-    'uses' => 'ContactController@store' 
+    'as' => 'contact_path',
+    'uses' => 'ContactController@store'
 ]);
 
 Route::get('/se_connecter', 'SeConnecterController@connect');
 
-Route::get('/redirection', function () {
-    return redirect('/read');
+Route::get('/test-email', function () {
+    return new ContactMessageCreated('name', 'second_name', 'email@mail.com', 'mmmmmmmm');
 });
