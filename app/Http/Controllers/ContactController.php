@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Mail\ContactMessageCreated;
 use Illuminate\Support\Facades\Mail;
@@ -16,8 +17,17 @@ class ContactController extends Controller
 
 	public function store(ContactRequest $request)
 	{
-        $mailable = new  ContactMessageCreated($request->nom, $request->prenom, $request->email, $request->message);
+		$message = new Message;
+		$message->nom = $request->nom;
+		$message->prenom = $request->prenom;
+		$message->email = $request->email;
+		$message->message = $request->message;
+		$message->save();
+
+		$mailable = new  ContactMessageCreated($message);
         Mail::to('belemgnegreetienne@gmail.com')->send($mailable);
-        return 'Done';
+		flashy('Nous vous répondrons dans les plus brefs délais !');
+		
+		return redirect()->route('root_path');
 	}
 }

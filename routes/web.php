@@ -12,7 +12,10 @@ use App\Mail\ContactMessageCreated;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', [
+    'as' => 'root_path',
+    'uses' => 'WelcomeController@index'
+]);
 
 Route::get('/a_propos', 'AboutController@read');
 
