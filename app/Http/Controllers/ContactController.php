@@ -25,9 +25,9 @@ class ContactController extends Controller
 		$message->save();
 
 		$mailable = new  ContactMessageCreated($message);
-        Mail::to('belemgnegreetienne@gmail.com')->send($mailable);
+        Mail::to('belemgnegreetienne@gmail.com')->queue($mailable);
 		flashy('Nous vous répondrons dans les plus brefs délais !');
-		
+
 		return redirect()->route('root_path');
 	}
 }
