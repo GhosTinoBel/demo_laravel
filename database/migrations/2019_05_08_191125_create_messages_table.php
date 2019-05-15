@@ -21,6 +21,15 @@ class CreateMessagesTable extends Migration
             $table->string('message');
             $table->timestamps();
         });
+
+        Schema::create('test', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('message');
+            $table->timestamps();
+        });
     }
 
     /**

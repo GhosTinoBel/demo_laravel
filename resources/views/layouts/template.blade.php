@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ $title }} - MyBlog.com</title>        
+        <title>{{ $title }} - MyBlog.com</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -22,7 +22,7 @@
 
         {{-- ceci est pour les commentaires blade (car ils ne s'affichent pas dans le code source) --}}
 
-        <!-- ceci est un commentaire HTML (car il s'affiche dans le code source ) --> 
+        <!-- ceci est un commentaire HTML (car il s'affiche dans le code source ) -->
 
         @yield('head')
 
@@ -34,7 +34,8 @@
 
         <footer class="footer">
        <div class="col-md-6 col-md-offset-5">
-          <p>&copy; 2016 Company, Inc.</p>
+           <br/>
+          <p>&copy; 2019 Company, Inc.</p>
        </div>
         </footer>
 
@@ -42,6 +43,7 @@
 
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/style.js"></script>
 
         @include('flashy::message')
     </body>
