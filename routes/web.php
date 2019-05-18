@@ -1,5 +1,6 @@
 <?php
 use App\Mail\ContactMessageCreated;
+use App\Http\Controllers\PageAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,10 +40,26 @@ Route::post('/contact', [
 ]);
 
 // route de la page de connection
-Route::get('/se_connecter', 'SeConnecterController@connect');
+Route::get('/ajouter_utilisateur', 'AjouterUtilisateurController@enregistrer');
 
-// recption des données de la page de connection
-Route::post('/se_connecter', [
-    'as' => 'seconnecter_path',
-    'uses' => 'SeConnecterController@store'
+// reception des données de la page de connection
+Route::post('/ajouter_utilisateur', [
+    'as' => 'ajouter_utilisateur_path',
+    'uses' => 'AjouterUtilisateurController@enregistrer'
 ]);
+
+// acceder à la page administrateur
+Route::get('/admin', [
+    'as' => 'admin_path',
+    'uses' => 'PageAdminController@index'
+]);
+
+Route::post('/admin', [
+    'as' => 'admin_path',
+    'uses' => 'PageAdminController@delete'
+]);
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');

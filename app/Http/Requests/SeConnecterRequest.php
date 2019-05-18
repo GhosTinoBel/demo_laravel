@@ -24,8 +24,7 @@ class SeConnecterRequest extends FormRequest
     public function rules()
     {
         return [
-            'pseudo' => 'required|min:5',
-			'mot_de_passe' => 'required|min:6'
+           //
         ];
     }
 }

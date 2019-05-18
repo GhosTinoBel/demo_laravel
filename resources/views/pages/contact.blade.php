@@ -10,7 +10,7 @@
                {{ csrf_field() }}
                 <div class="form-group {{ $errors -> has('nom') ? 'has-error' : ''}}">
                     <label for="nom" class="control-label">Nom</label>
-                <input type="text" class="form-control" name="nom" id="nom" placeholder="votre nom de famille" value="{{ old('nom') }}" required="required">
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="votre nom de famille" value="{{ old('nom') }}" required="required">
                     {!! $errors -> first('nom', '<span class="help-block">:message</span>') !!}
                </div>
                <div class="form-group {{ $errors -> has('prenom') ? 'has-error' : ''}}">
