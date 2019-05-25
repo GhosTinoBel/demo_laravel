@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\DB;
 class PageAdminController extends Controller
 {
     public function __construct() {
+        //User::create(['name' => 'admin', 'email' => 'test@test.fr', 'password' => Hash::make('admin')]);
         $this->middleware('auth');
     }
 
 
     public function index()
 	{
-        // User::create(['name' => 'admin', 'email' => 'test@test.fr', 'password' => Hash::make('admin')]);
         $message = DB::table('messages')->get();
         return view('home', ['message' => $message]);
     }
