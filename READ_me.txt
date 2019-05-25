@@ -1,23 +1,23 @@
 
 ##################################################################################
 
-MyBlog.com est un blog qui présente la technologie Laravel à travers les pages :
+MyBlog.com est un blog qui prï¿½sente la technologie Laravel ï¿½ travers les pages :
 " Accueil, A propos et Build With Laravel. "
-#Mise en évidence de:
+#Mise en ï¿½vidence de:
 _routage et vues
 _moteur de Template blade
 
-Le button "Me contacter" permet aux visiteurs d'envoyer des messages au bloggeur pour 'éventuelles questions ou autres propos. Une copie du mail est enregistrée dans la base de données et envoyé aussi sur le mail online de l'administrateur.
-#Mise en évidence de:
-_formulaire, contrôle et validation, 
+Le button "Me contacter" permet aux visiteurs d'envoyer des messages au bloggeur pour 'ï¿½ventuelles questions ou autres propos. Une copie du mail est enregistrï¿½e dans la base de donnï¿½es et envoyï¿½ aussi sur le mail online de l'administrateur.
+#Mise en ï¿½vidence de:
+_formulaire, contrï¿½le et validation, 
 _envoi de mails,
 _file d'attente des mails
-_un système de migration pour les bases de données,
+_un systï¿½me de migration pour les bases de donnï¿½es,
 
-L'admin peut se loguer en accédant à l'url "/admin" où il fournira les données d'authentification. Il a tableau d'affichage où il peut aussi lire les messages des visiteurs, puis de les supprimer. Et enfin, ajouter d'autres admins.
-#Mise en évidence de:
-_un créateur de requêtes SQL (CRUD) et un ORM performants,
-_un système d'authentification pour les connexions,
+L'admin peut se loguer en accï¿½dant ï¿½ l'url "/admin" oï¿½ il fournira les donnï¿½es d'authentification. Il a tableau d'affichage oï¿½ il peut aussi lire les messages des visiteurs, puis de les supprimer. Et enfin, ajouter d'autres admins.
+#Mise en ï¿½vidence de:
+_un crï¿½ateur de requï¿½tes SQL (CRUD) et un ORM performants,
+_un systï¿½me d'authentification pour les connexions,
 _une gestion des sessions
 
 
@@ -27,18 +27,18 @@ Nom bd: laracarte
 Utilisateur: root
 Mot de passe:
 
-#technologies web utilisées
+#technologies web utilisï¿½es
 _Bootstrap 3 & 4, 
 
-#données d'authentification
+#donnï¿½es d'authentification
 User: test@test.fr
 Password: admin
 
-#nom du fichier sql de la base : localhost.sql
+#nom du fichier sql de la base :  localhost.sql
 
 
 ##################################################################################
 
 Dans la prochaine version, 
-*permettre à l'admin de répondre aux visiteurs depuis le site
+*permettre ï¿½ l'admin de rï¿½pondre aux visiteurs depuis le site
 *afficher les autres admins et pouvoir les Update-Delete
