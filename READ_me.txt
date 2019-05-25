@@ -34,6 +34,8 @@ _Bootstrap 3 & 4,
 User: test@test.fr
 Password: admin
 
+#nom du fichier sql de la base : localhost.sql
+
 
 ##################################################################################
 
